@@ -1,0 +1,61 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Android/IntelliJ
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/libraries
+.idea/caches
+.idea/modules.xml
+/captures/
+.externalNativeBuild
+.cxx
+local.properties
+.navigation/
+
+# Gradle/Build
+build/
+*/build/
+*/*/build/
+out/
+
+# APKs and AABs
+*.apk
+*.ap_
+*.aab
+
+# iOS / Xcode
+iosApp/Podfile.lock
+iosApp/Pods/
+iosApp/iosApp.xcworkspace/
+iosApp/iosApp.xcodeproj/project.xcworkspace/
+iosApp/iosApp.xcodeproj/xcuserdata/
+iosApp/iosApp.xcodeproj/*.pbxuser
+iosApp/iosApp.xcodeproj/*.mode1v3
+iosApp/iosApp.xcodeproj/*.mode2v3
+iosApp/iosApp.xcodeproj/*.pbxuser
+!iosApp/iosApp.xcodeproj/project.pbxproj
+shared/shared.podspec
+*.xcarchive
+DerivedData/
+
+# Kotlin Multiplatform
+.kotlin/
+.swiftpm/
+
+# Log Files
+*.log
