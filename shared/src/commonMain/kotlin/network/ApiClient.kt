@@ -78,9 +78,28 @@ class ApiClient {
         return client.get("${baseUrl}locators/scan/$code").body()
     }
 
-    suspend fun createMovement(request: MovementRequest): MovementResponse {
-        return client.post("${baseUrl}movements") {
+    suspend fun getMovements(type: String? = null, status: String? = null): List<network.models.MovementHeader> {
+        return client.get("${baseUrl}movements") {
+            type?.let { io.ktor.client.request.parameter("type", it) }
+            status?.let { io.ktor.client.request.parameter("status", it) }
+        }.body()
+    }
+
+    suspend fun getMovementDetails(id: String): network.models.MovementHeader {
+        return client.get("${baseUrl}movements/$id").body()
+    }
+
+    suspend fun claimMovement(id: String): network.models.GenericResponse {
+        return client.post("${baseUrl}movements/$id/claim").body()
+    }
+
+    suspend fun scanVerify(id: String, request: network.models.ScanVerifyRequest): network.models.GenericResponse {
+        return client.post("${baseUrl}movements/$id/scan-verify") {
             setBody(request)
         }.body()
+    }
+
+    suspend fun submitMovement(id: String): network.models.GenericResponse {
+        return client.post("${baseUrl}movements/$id/submit").body()
     }
 }
