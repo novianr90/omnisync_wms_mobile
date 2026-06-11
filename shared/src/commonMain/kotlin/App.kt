@@ -3,7 +3,6 @@ import network.ApiClient
 import theme.AppTheme
 import ui.DashboardScreen
 import ui.LoginScreen
-import ui.ScanScreen
 
 sealed class Screen {
     object Login : Screen()
