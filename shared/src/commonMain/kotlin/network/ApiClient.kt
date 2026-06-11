@@ -81,8 +81,8 @@ class ApiClient {
 
     suspend fun getMovements(type: String? = null, status: String? = null): List<network.models.MovementHeader> {
         return client.get("${baseUrl}movements") {
-            type?.let { io.ktor.client.request.parameter("type", it) }
-            status?.let { io.ktor.client.request.parameter("status", it) }
+            type?.let { parameter("type", it) }
+            status?.let { parameter("status", it) }
         }.body()
     }
 
